@@ -15,23 +15,31 @@
             android:id="@+id/customDrawingArea"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="3.5"
-            android:orientation="vertical"></LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/elementColorModifierArea"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
+            <edu.up.cs371.caoj22.hw2.CustomDrawingSurface
+                android:id="@+id/customSurface"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/elementColorModifierArea"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
             <TextView
-                android:id="@+id/currentElementName"
+                android:id="@+id/curElementName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight=".5"
                 android:text="Hello World!"
                 android:textAlignment="center"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -48,13 +56,16 @@
                     android:id="@+id/elementRedValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textAlignment="center"/>
 
                 <SeekBar
                     android:id="@+id/elementRedModifier"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:min="0" />
             </LinearLayout>
 
             <LinearLayout
@@ -68,13 +79,16 @@
                     android:id="@+id/elementGreenValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textAlignment="center"/>
 
                 <SeekBar
                     android:id="@+id/elementGreenModifier"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:min="0" />
             </LinearLayout>
 
             <LinearLayout
@@ -88,13 +102,16 @@
                     android:id="@+id/elementBlueValue"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="TextView"
+                    android:textAlignment="center"/>
 
                 <SeekBar
                     android:id="@+id/elementBlueModifier"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:min="0" />
             </LinearLayout>
 
         </LinearLayout>
