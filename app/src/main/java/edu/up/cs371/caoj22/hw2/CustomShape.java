@@ -19,7 +19,8 @@ import android.graphics.Paint;
  * @version Spring 2019
  *
  */
-public abstract class CustomShape {
+public abstract class CustomShape
+{
 
     /**
      * this is the "fudge factor" for determining whether a tap falls within a
@@ -33,6 +34,8 @@ public abstract class CustomShape {
     /** a random number generator for changing to a random color */
     protected Random myRand = new Random();
 
+    /** This keeps track of an element's individual color values to be displayed
+     * on the SeekBars and ensures the element is painted correctly  */
     protected int red, green, blue;
     /**
      * This gives the element a name for identification. This need not be unique
@@ -40,8 +43,10 @@ public abstract class CustomShape {
      */
     protected String myName = "$NO NAME$";
 
-    /** the ctor requires that you give the object a name and a color */
-    public CustomShape(String name, int r, int g, int b) {
+    /** the constructor requires that you give the object a name and
+     * three color values*/
+    public CustomShape(String name, int r, int g, int b)
+    {
         // init instance variables
         red = r;
         green = g;
@@ -58,7 +63,8 @@ public abstract class CustomShape {
     }
 
     /** change the color */
-    public void setColor(int color) {
+    public void setColor(int color)
+    {
 
         // ignore request if it's not a new color (this keeps the undo queue
         // clean)
@@ -75,7 +81,8 @@ public abstract class CustomShape {
     }
 
     /** switch to a random color */
-    public void setRandomColor() {
+    public void setRandomColor()
+    {
         int randColor = Color.rgb(myRand.nextInt(256), myRand.nextInt(256),
                 myRand.nextInt(256));
         setColor(randColor);

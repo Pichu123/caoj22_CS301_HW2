@@ -11,15 +11,19 @@ import android.graphics.Rect;
  * @author Andrew Nuxoll
  * @version Spring 2015
  *
+ * @author Justin Cao
+ * @version Spring 2019
  */
 
-public class CustomRect extends CustomShape {
+public class CustomRect extends CustomShape
+{
 
 
     /** the position and size of the rectangle is stored here */
     protected Rect myRect;
 
-    /** the rectangles dimensions must be defined at construction */
+    /** the rectangles dimensions must be defined at construction
+     * As of the Spring 2019 version, the rectangle additionally requires individual red, green, blue values*/
     public CustomRect(String name, int r, int g, int b,
                       int left, int top, int right, int bottom)
     {
@@ -30,12 +34,14 @@ public class CustomRect extends CustomShape {
 
 
     @Override
-    public void drawMe(Canvas canvas) {
+    public void drawMe(Canvas canvas)
+    {
         canvas.drawRect(myRect, myPaint);  //main rectangle
     }
 
     @Override
-    public boolean containsPoint(int x, int y) {
+    public boolean containsPoint(int x, int y)
+    {
 
         //Want to check for a tap within a slightly larger rectangle
         int left = this.myRect.left - TAP_MARGIN;

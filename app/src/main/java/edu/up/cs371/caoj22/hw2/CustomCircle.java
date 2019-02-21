@@ -1,7 +1,6 @@
 package edu.up.cs371.caoj22.hw2;
 
 import android.graphics.Canvas;
-import android.graphics.Rect;
 
 /**
  * <!-- class CustomCircle -->
@@ -11,16 +10,20 @@ import android.graphics.Rect;
  * @author Andrew Nuxoll
  * @version Spring 2015
  *
+ * @author Justin Cao
+ * @version Spring 2019
  */
 
-public class CustomCircle extends CustomShape {
+public class CustomCircle extends CustomShape
+{
 
     /** these variables define the location and radius of a circle */
     private int x;
     private int y;
     private int radius;
 
-    /** the circle's dimensions must be defined at construction */
+    /** the circle's dimensions must be defined at construction
+     * As of the Spring 2019 version, the circle additionally requires individual red, green, blue values*/
     public CustomCircle(String name, int r, int g, int b, int x, int y, int radius)
     {
         super(name, r, g, b);
@@ -32,14 +35,16 @@ public class CustomCircle extends CustomShape {
 
 
     @Override
-    public void drawMe(Canvas canvas) {
+    public void drawMe(Canvas canvas)
+    {
         canvas.drawCircle(x, y, radius, myPaint);  //main circle
     }
 
 
     /** for ease of calculation, just draw a box around the circle and see if the point is in that */
     @Override
-    public boolean containsPoint(int x, int y) {
+    public boolean containsPoint(int x, int y)
+    {
         //Calculate the distance between this point and the center
         int xDist = Math.abs(x - this.x);
         int yDist = Math.abs(y - this.y);
